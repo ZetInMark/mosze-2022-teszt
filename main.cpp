@@ -31,6 +31,7 @@ int main()
 
     delete[] b;
 
+    std::cout<<"Hunor"<<std::endl;
     return 0;
 }
 //code good
