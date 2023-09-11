@@ -1,36 +1,52 @@
+Hunor Kovács
 #include <iostream>
 
 constexpr int N_ELEMENTS = 100;
 
 int main()
 {
+    // Hiba 1: Változónévben elgépelés, NELEMENTS helyett N_ELEMENTS
     int* b = new int[N_ELEMENTS];
 
-    std::cout << "1-100 ertekek duplazasa" << std::endl;
+    // Hiba 2: Hiányzó pontosvesszõ a sor végén
+    std::cout << '1-100 ertekek duplazasa';
 
-    for (int i = 0; i < N_ELEMENTS; i++)
+    // Hiba 3: Hiányzó pontosvesszõ a sor végén, és a for ciklus feltétele hiányzik
+    for (int i = 0;)
     {
         b[i] = i * 2;
     }
 
-    for (int i = 0; i < N_ELEMENTS; i++)
+    // Hiba 4: A második for ciklusnak helytelen a feltétele és hiányzik az inkrementáló utasítás
+    for (int i = 0; i; i++)
     {
-        std::cout << "Ertek: " << b[i] << std::endl;
+        // Hiba 5: Hiányzó pontosvesszõ a sor végén
+        std::cout << "Ertek:";
     }
 
-    int atlag = 0;
-
-    for (int i = 0; i < N_ELEMENTS; i++)
+    // Hiba 6: Hiányzó pontosvesszõ a sor végén, és a ciklusnak 0-tól N_ELEMENTS - 1-ig kellene számolnia
+    for (int i = 0; i < N_ELEMENTS, i++)
     {
-        atlag += b[i];
+        // Hiba 7: Hiányzó pontosvesszõ a sor végén
+        atlag += b[i]
     }
+
+    // Hiba 8: A 'atlag' változót nem inicializálták, és 0-ra kellene inicializálni
+    int atlag;
+
+    // Hiba 9: Hiányzó pontosvesszõ a sor végén
+    atlag += b[i]
+
+        // Hiba 10: Hiányzó pontosvesszõ a sor végén
+        std::cout << "Atlag szamitasa: " << std::endl;
 
     atlag /= N_ELEMENTS;
 
+    // Hiba 11: A szöveg a string-ben idézõjelek között kell legyen
     std::cout << "Atlag: " << atlag << std::endl;
 
+    // Hiba 12: Hiányzó 'delete' utasítás a memória felszabadításához
     delete[] b;
 
     return 0;
 }
-Write to Hunor Kovács
